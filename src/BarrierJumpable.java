@@ -10,8 +10,4 @@ public class BarrierJumpable extends BaseBarrier{
         return height;
     }
 
-    @Override
-    public boolean moveOverAction() {
-        return false;
-    }
 }

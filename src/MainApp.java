@@ -20,34 +20,32 @@ public class MainApp {
             } else if (o instanceof Robot){
                 System.out.println("Участник робот вступает в гонку!");
             } else {
-                System.out.printf("НЛО прилетело и высадило существо %s. Оно пока не реализует необходимые интерфейсы и не может участвовать в гонке. В другой раз.\\n", o.getClass());
+                System.out.printf("НЛО прилетело и высадило существо %s. Оно пока не реализует необходимые интерфейсы и не может участвовать в гонке. В другой раз.\n", o.getClass());
                 continue;
             }
 
 
-
-
-            /*for (BaseBarrier b : barriers) {
+            for (BaseBarrier b : barriers) {
                if (o instanceof Cat){
                    if (!((Cat) o).moveOver((b))) {
-                       System.out.println("Кот вышел из гонки! \\n");
+                       System.out.println("Кот вышел из гонки! \n");
                        break;
                    }
                } else if (o instanceof Man) {
                    if (!((Man) o).moveOver(b)){
-                       System.out.println("Человек вышел из гонки! \\n");
+                       System.out.println("Человек вышел из гонки! \n");
                        break;
                    }
                } else if (o instanceof Robot){
                    if (!((Robot) o).moveOver(b)){
-                       System.out.println("Робот вышел из гонки! \\n");
+                       System.out.println("Робот вышел из гонки! \n");
                        break;
                    }
                } else {
-                   System.out.printf("Данное существо (%s) науке не известно\\n", o.getClass());
+                   System.out.printf("Данное существо (%s) науке не известно\n", o.getClass());
                    break;
                }
-            }*/
+            }
         }
 
 

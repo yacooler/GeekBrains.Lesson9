@@ -1,3 +1,3 @@
 public interface Jumper {
-    int getJumpHeight();
+    boolean moveOver(BarrierJumpable b);
 }

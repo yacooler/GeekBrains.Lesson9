@@ -1,3 +1,3 @@
 public interface Runner {
-    int getRunDistance();
+    boolean moveOver(BarrierRunable b);
 }
