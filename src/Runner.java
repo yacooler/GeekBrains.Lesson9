@@ -1,3 +1,3 @@
 public interface Runner {
-    boolean moveOver(BarrierRunable b);
+    boolean overcomeBarrier(BarrierRoad b);
 }

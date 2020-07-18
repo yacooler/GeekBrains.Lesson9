@@ -1,3 +1,3 @@
 public interface Jumper {
-    boolean moveOver(BarrierJumpable b);
+    boolean overcomeBarrier(BarrierWall b);
 }
