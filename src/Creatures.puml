@@ -1,0 +1,81 @@
+@startuml
+
+interface Runner {
+    +{method} {abstract} boolean overcomeBarrier(BarrierRoad b)
+}
+
+interface Jumper{
+    +{method} {abstract} boolean overcomeBarrier(BarrierWall b)
+}
+
+interface Creature{
+    +{method} {abstract} String getDescription();
+    +{method} {abstract} boolean overcomeBarrier(BarrierBase barrierBase);
+}
+
+
+class Cat{
+    -int maxHeight
+    -int maxDistance
+    ..constructors..
+    +{method} public Cat(int maxHeight, int maxDistance)
+    ..overrided methods..
+    +{method} boolean overcomeBarrier(BarrierWall b)
+    +{method} boolean overcomeBarrier(BarrierRoad b)
+    +{method} boolean overcomeBarrier(BarrierBase barrierBase)
+    +{method} String getDescription()
+}
+
+
+class Man{
+    -int maxHeight
+    -int maxDistance
+    ..constructors..
+    +{method} public Cat(int maxHeight, int maxDistance)
+    ..overrided methods..
+    +{method} boolean overcomeBarrier(BarrierWall b)
+    +{method} boolean overcomeBarrier(BarrierRoad b)
+    +{method} boolean overcomeBarrier(BarrierBase barrierBase)
+    +{method} String getDescription()
+}
+
+class Robot{
+    -int maxHeight
+    -int maxDistance
+    ..constructors..
+    +{method} public Cat(int maxHeight, int maxDistance)
+    ..overrided methods..
+    +{method} boolean overcomeBarrier(BarrierWall b)
+    +{method} boolean overcomeBarrier(BarrierRoad b)
+    +{method} boolean overcomeBarrier(BarrierBase barrierBase)
+    +{method} String getDescription()
+}
+
+class Snail <<Тестовый, без имплиментации Jumper>>{
+    -int maxDistance
+    ..constructors..
+    +{method} public Cat(int maxDistance)
+    ..overrided methods..
+    +{method} boolean overcomeBarrier(BarrierRoad b)
+    +{method} boolean overcomeBarrier(BarrierBase barrierBase)
+    +{method} String getDescription()
+}
+
+Runner <|-- Cat
+Jumper <|-- Cat
+Creature <|-- Cat
+
+
+Runner <|-- Man
+Jumper <|-- Man
+Creature <|-- Man
+
+
+Runner <|-- Robot
+Jumper <|-- Robot
+Creature <|-- Robot
+
+Runner <|-- Snail
+Creature <|-- Snail
+
+@enduml

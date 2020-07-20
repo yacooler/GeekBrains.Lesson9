@@ -9,5 +9,7 @@ public abstract class BarrierBase {
         return strength;
     }
 
+    public abstract boolean checkCreatureOvercome(Creature c);
+
     public abstract String getDescription();
 }

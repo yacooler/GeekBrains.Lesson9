@@ -1,0 +1,33 @@
+@startuml
+
+abstract class BarrierBase{
+    -{field}  int strength
+    ..constructors..
+    +{method} BarrierBase(int strength)
+    ..methods..
+    +{method} int getStrength()
+    ..abstract methods..
+    +{method} {abstract} String getDescription()
+    +{method} {abstract} boolean checkCreatureOvercome(Creature c)
+}
+
+class BarrierWall{
+    ..constructors..
+    +{method} BarrierWall(int strength)
+    ..overrided methods..
+    +{method} String getDescription()
+    +{method} boolean checkCreatureOvercome(Creature c)
+}
+
+class BarrierRoad{
+    ..constructors..
+    +{method} BarrierWall(int strength)
+    ..overrided methods..
+    +{method} String getDescription()
+    +{method} boolean checkCreatureOvercome(Creature c)
+}
+
+BarrierBase <|-- BarrierWall
+BarrierBase <|-- BarrierRoad
+
+@enduml

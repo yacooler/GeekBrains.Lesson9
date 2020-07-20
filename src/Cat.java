@@ -33,19 +33,20 @@ public class Cat implements Runner, Jumper, Creature {
 
     @Override
     public boolean overcomeBarrier(BarrierBase barrierBase) {
-        System.out.println("base class");
-        switch (barrierBase.getClass().getName()){
-            case "BarrierWall":{
-                BarrierWall barrierWall = (BarrierWall) barrierBase;
-                return overcomeBarrier(barrierWall);
-            }
-            case "BarrierRoad":{
-                BarrierRoad barrierRoad = (BarrierRoad) barrierBase;
-                return overcomeBarrier(barrierRoad);
-            }
-        }
-        System.out.println("Нет поведения для " + barrierBase.getClass().toString());
-        return false;
+//        //Раньше даункастинг выглядел так
+//        switch (barrierBase.getClass().getName()){
+//            case "BarrierWall":{
+//                BarrierWall barrierWall = (BarrierWall) barrierBase;
+//                return overcomeBarrier(barrierWall);
+//            }
+//            case "BarrierRoad":{
+//                BarrierRoad barrierRoad = (BarrierRoad) barrierBase;
+//                return overcomeBarrier(barrierRoad);
+//            }
+//        }
+//        System.out.println("Нет поведения для " + barrierBase.getClass().toString());
+//        return false;
+        return barrierBase.checkCreatureOvercome(this);
     }
 
     @Override

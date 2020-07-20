@@ -27,7 +27,7 @@ public class MainApp {
                     System.out.printf("%s выходит из гонки\n", creature.getDescription());
                     win = false;
                     break;
-                };
+                }
             }
             if (win){
                 System.out.printf("%s доходит до конца!\n", creature.getDescription());
@@ -58,7 +58,7 @@ public class MainApp {
         Random random = new Random();
         for (int i = 0; i < creatures.length; i++) {
 
-            switch (random.nextInt(3)){
+            switch (random.nextInt(4)){
                 case 0:{ //Кот прыгает выше других, но бегает хуже
                     creatures[i] = new Cat(random.nextInt(8) + 2, random.nextInt(50) + 85);
                     break;
@@ -71,6 +71,11 @@ public class MainApp {
 
                 case 2:{//Робот бегает дальше других, но прыгает хуже
                     creatures[i] = new Robot(random.nextInt(4) + 2, random.nextInt(50) + 150 );
+                    break;
+                }
+
+                case 3:{//Улитка тестовый класс, не имплементирует Jumper и не умеет прыгать
+                    creatures[i] = new Snail(random.nextInt(50) + 750 );
                     break;
                 }
             }
