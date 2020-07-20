@@ -2,13 +2,7 @@ import java.util.Random;
 
 public class MainApp {
     public static void main(String[] args) {
-        //test();
-        BarrierBase b = new BarrierRoad(100);
-
-        Cat c = new Cat(1000,1000);
-
-        c.overcomeBarrier(b.getClass().cast(b));
-
+        test();
     }
 
     public static void test(){
@@ -60,25 +54,25 @@ public class MainApp {
         }
     }
 
-    private static void makeCreatures(Object[] creatures) {
+    private static void makeCreatures(Creature[] creatures) {
         Random random = new Random();
         for (int i = 0; i < creatures.length; i++) {
 
-            switch (random.nextInt(1)){
+            switch (random.nextInt(3)){
                 case 0:{ //Кот прыгает выше других, но бегает хуже
-                    creatures[i] = new Cat(random.nextInt(6) + 4, random.nextInt(50) + 85);
+                    creatures[i] = new Cat(random.nextInt(8) + 2, random.nextInt(50) + 85);
                     break;
                 }
 
-//                case 1:{ //Средние показатели
-//                    creatures[i] = new Man(random.nextInt(50) + 100, random.nextInt(6) + 1);
-//                    break;
-//                }
-//
-//                case 2:{//Робот бегает дальше других, но прыгает хуже
-//                    creatures[i] = new Robot(random.nextInt(50) + 150, random.nextInt(3) + 1);
-//                    break;
-//                }
+                case 1:{ //Средние показатели
+                    creatures[i] = new Man(random.nextInt(6) + 2,random.nextInt(50) + 100 );
+                    break;
+                }
+
+                case 2:{//Робот бегает дальше других, но прыгает хуже
+                    creatures[i] = new Robot(random.nextInt(4) + 2, random.nextInt(50) + 150 );
+                    break;
+                }
             }
         }
     }
